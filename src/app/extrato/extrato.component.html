@@ -1,0 +1,39 @@
+<!--4.3 vou add ngFor= farei um for, iterando uma colecao.
+  Posso iterar dentro do templ ( html)
+  Posso add a data
+  4.4 vou mudar a div para tabela!!Apago toda div!!
+  terá thead=cabeçalho, th = colunas ( 3 celulas de cabeç)
+  feito cabeçalho, vamos para o corpo=tbody. crio 3 colunas, a linha tr,
+  VOU INTERPOLAR os valores
+  Vou colocar o formato que quero: 'date:'short'' ,
+  tb colocarei o formato 'currency' para ser como moeda
+  5.1 Usar o *ngIf no tbody, se tem algum conteudo dentro de transfs
+  ng-Template = é um conteudo que quero substituir caso o ngIf nao
+  seja atendido(se tem algum conteúdo em transfs)
+  vou dar um nome a esse elemento: 'listaVazia', vai chamar no else
+  7.2 vou add um container para identif a tela de extrato
+
+-->
+
+<section class='container'>
+  <h2 class="titulo">Transferências</h2>
+<table class='tabela'>
+  <thead class='tabela__cabecalho'>
+    <th class='tabela__cabecalho__conteudo'>Data</th>
+    <th class='tabela__cabecalho__conteudo'>Valor</th>
+    <th class='tabela__cabecalho__conteudo'>Destino</th>
+  </thead>
+  <tbody *ngIf='transferencias?.length>0; else listaVazia'>
+    <tr class='tabela__linha' *ngFor="let transferencia of transferencias">
+      <td class='tabela__conteudo'>{{transferencia.data | date: 'short'}}</td>
+      <td class='tabela__conteudo'>{{transferencia.valor | currency }}</td>
+      <td class='tabela__conteudo'>{{transferencia.destino}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #listaVazia>
+ <p>Nenhuma operação cadastrada.</p>
+</ng-template>
+
+</section>

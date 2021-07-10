@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ByteBank"
+    }
+  },
+  "defaultProject": "ByteBank",
+  "cli": {
+    "analytics": false
+  }
 }

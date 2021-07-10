@@ -1,0 +1,31 @@
+<!--label 'for' para a tag valor
+Depois de criar todo html com divs, labels e inputs...
+vou colocar uma section container em tudo e dar as classes do scss que colei!
+Colocarei o evento de 'ngsubmit' no meu form = dispara o metodo transferir,
+ngsubmit esta entre () pq eh um eventbind, estou passando um evento para uma propried interna do ang
+2.3 Vamos usar o 'ngModel' para passar o valor para classe! Preciso criar o atrib la no html
+**eh preciso usar two way databind>> [(ngModel)] >> garante que o valor seja transf tanto do templ p/ o componente e vice versa!!
+vou dar um nome para o input "name"
+-->
+<section class='container'>
+
+<form class='formulario' (ngSubmit)='transferir()'>
+    <h2 class='formulario__titulo'>Nova transferência</h2>
+
+  <div class= 'form-field'>
+    <label class='form-field__label' for='valor'>Valor</label>
+    <input class='form-field__input' id="valor" type='number' [(ngModel)]='valor' name='valor'>
+  </div>
+
+  <div class= 'form-field'>
+    <label class='form-field__label' for='destino'>Destino</label>
+    <input class='form-field__input' id="destino" type='text' [(ngModel)]='destino' name='destino'>
+  </div>
+
+  <div class="botao-wrapper">
+  <button class='botao' type='submit'>Transferir</button>
+  </div>
+
+</form>
+
+</section>
